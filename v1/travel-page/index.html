@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CRM and Enquiry Management for Travel Agencies | defineBit</title>
+<meta name="description" content="Stop losing Instagram and WhatsApp enquiries. defineBit builds a custom CRM for travel agencies that tracks every lead, follow-up and booking, with a daily summary on Telegram or WhatsApp.">
+<link rel="canonical" href="https://definebit.dev/travel-agencies/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://definebit.dev/travel-agencies/">
+<meta property="og:title" content="CRM and Enquiry Management for Travel Agencies | defineBit">
+<meta property="og:description" content="Every Instagram and WhatsApp enquiry becomes a lead with a status, an owner and a follow-up reminder.">
+<meta property="og:image" content="https://definebit.dev/share.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap">
+<style>
+:root{--bg:#050505;--ink:#f4efe6;--mute:#a39d92;--gold:#f5b25a;--card:#1a1a1a;--line:#2b2b2b;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Space Grotesk',system-ui,sans-serif;line-height:1.55;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;background:radial-gradient(70% 40% at 50% 0%,rgba(245,178,90,.14),transparent 70%);pointer-events:none;z-index:0}
+a{color:inherit}
+.wrap{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 22px}
+.nav{padding:20px 0}
+.nav a{color:var(--mute);text-decoration:none;font-size:.95rem}
+.nav a:hover{color:var(--gold)}
+.hero{display:grid;gap:36px;padding:36px 0 64px}
+h1{margin:0;font-size:clamp(2.2rem,8vw,4rem);line-height:1.05;letter-spacing:-.03em}
+.lead{margin:18px 0 0;max-width:46ch;color:var(--mute);font-size:clamp(1.05rem,3.4vw,1.25rem)}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 26px;border-radius:999px;border:1px solid #3a3733;text-decoration:none;font-weight:500}
+.btn:hover{border-color:var(--gold)}
+.btn.primary{background:var(--gold);border-color:var(--gold);color:#1a1209;font-weight:700}
+.btn.primary:hover{background:#ffc67a}
+.btn:focus-visible,summary:focus-visible,.nav a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* the one memorable thing: a DM becoming a lead */
+.flow{display:grid;gap:12px}
+.msg,.lead-card{border:1px solid var(--line);border-radius:14px;background:var(--card);padding:16px 18px}
+.msg small,.lead-card small{display:block;color:var(--mute);font-size:.8rem;margin-bottom:6px}
+.msg p{margin:0}
+.arrow{justify-self:center;color:var(--gold);font-size:1.4rem;line-height:1}
+.lead-card{border-color:#5a4426}
+.lead-card dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 16px}
+.lead-card dt{color:var(--mute)}
+.lead-card dd{margin:0;font-weight:500}
+.note{margin:10px 2px 0;color:var(--mute);font-size:.85rem}
+
+section{padding:56px 0}
+h2{margin:0 0 12px;font-size:clamp(1.7rem,6vw,2.6rem);letter-spacing:-.025em;line-height:1.1}
+.sub{margin:0 0 26px;color:var(--mute);max-width:52ch}
+.feat{display:grid;gap:14px;list-style:none;margin:0;padding:0}
+.feat li{border-top:1px solid var(--line);padding-top:14px}
+.feat b{display:block;font-size:1.1rem;margin-bottom:2px}
+.feat span{color:var(--mute)}
+.steps{margin:0;padding:0 0 0 22px;border-left:1px solid var(--line);max-width:600px;list-style:none}
+.steps li{position:relative;padding:0 0 24px 22px}
+.steps li::before{content:"";position:absolute;left:-28px;top:7px;width:11px;height:11px;border-radius:50%;background:var(--gold)}
+.steps b{display:block;font-size:1.15rem}
+.steps span{color:var(--mute)}
+.faq{display:grid;gap:10px;max-width:720px}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 18px}
+summary{cursor:pointer;min-height:56px;display:flex;align-items:center;font-weight:500;font-size:1.05rem;line-height:1.35;list-style:none}
+summary::-webkit-details-marker{display:none}
+details[open] summary{color:var(--gold)}
+details p{margin:0 0 18px;color:var(--mute)}
+.proof{border:1px solid var(--line);border-radius:14px;background:var(--card);padding:22px;max-width:720px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.tags span{border:1px solid var(--line);border-radius:6px;padding:3px 10px;font-size:.85rem;color:var(--mute)}
+footer{position:relative;z-index:1;padding:32px 22px 48px;text-align:center;color:var(--mute);font-size:.9rem}
+@media(min-width:900px){.hero{grid-template-columns:1.1fr 1fr;align-items:center;gap:56px;padding:56px 0 88px}.feat{grid-template-columns:repeat(2,1fr);gap:22px 36px}section{padding:80px 0}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav"><a href="/">← defineBit</a></nav>
+
+  <header class="hero">
+    <div>
+      <h1>Stop losing travel enquiries in Instagram and WhatsApp DMs</h1>
+      <p class="lead">defineBit builds a custom CRM for travel agencies. Every enquiry becomes a lead with a status, an owner and a follow-up reminder.</p>
+      <div class="cta">
+        <a class="btn primary" href="https://wa.me/910000000000">Message on WhatsApp</a>
+        <a class="btn" href="https://www.instagram.com/definebit.dev/">DM on Instagram</a>
+      </div>
+    </div>
+    <div>
+      <div class="flow" role="img" aria-label="Example: an Instagram message turns into a lead with a status, an owner and a follow-up reminder">
+        <div class="msg"><small>Instagram DM</small><p>Hi, Manali trip for 4 people in December?</p></div>
+        <div class="arrow" aria-hidden="true">↓</div>
+        <div class="lead-card"><small>Lead in your CRM</small>
+          <dl><dt>Status</dt><dd>Quote sent</dd><dt>Owner</dt><dd>Riya</dd><dt>Follow-up</dt><dd>Tomorrow, 11:00</dd></dl>
+        </div>
+      </div>
+      <p class="note">Example screen for illustration.</p>
+    </div>
+  </header>
+
+  <main>
+    <section id="features">
+      <h2>What your CRM does</h2>
+      <p class="sub">Built around how a travel agency really works, not a generic template.</p>
+      <ul class="feat">
+        <li><b>One place for every enquiry</b><span>Instagram and WhatsApp chats become leads, so nothing sits unread in a DM.</span></li>
+        <li><b>Status, owner and reminder</b><span>See who is handling each lead and who still needs a reply.</span></li>
+        <li><b>Quotes and bookings together</b><span>Track a trip from first message to confirmed booking without switching tools.</span></li>
+        <li><b>A daily summary on your phone</b><span>One short Telegram or WhatsApp message with new enquiries, pending quotes and confirmed bookings.</span></li>
+      </ul>
+    </section>
+
+    <section id="proof">
+      <h2>Built for real agencies</h2>
+      <div class="proof">
+        <p style="margin:0">We built a travel agency website with its own admin panel, so enquiries and bookings are managed in one place.</p>
+        <div class="tags"><span>Laravel</span><span>Filament</span><span>CRM</span></div>
+        <!-- Add a 1-minute screen recording of the travel CRM here -->
+      </div>
+    </section>
+
+    <section id="process">
+      <h2>How it works</h2>
+      <ol class="steps">
+        <li><b>Talk</b><span>A short call about how enquiries reach you today.</span></li>
+        <li><b>Plan</b><span>We map the pages, features and cost before we build.</span></li>
+        <li><b>Build and connect</b><span>We build the CRM and connect your Instagram and WhatsApp business accounts.</span></li>
+        <li><b>Launch</b><span>We go live and support you after.</span></li>
+      </ol>
+    </section>
+
+    <section id="faq">
+      <h2>Questions travel agencies ask</h2>
+      <div class="faq">
+        <details><summary>How do I manage travel enquiries from Instagram and WhatsApp in one place?</summary><p>We connect both to a custom CRM, so each enquiry becomes a lead with a status, an owner and a follow-up reminder. You can see at a glance who still needs a reply.</p></details>
+        <details><summary>Do I need Meta approval to connect WhatsApp and Instagram?</summary><p>Yes. Connecting WhatsApp and Instagram needs Meta's business approval. We guide you through it as part of the setup.</p></details>
+        <details><summary>Can I get a daily summary of my bookings?</summary><p>Yes. The CRM can send one short Telegram or WhatsApp message each day with new enquiries, quotes waiting for a reply and bookings confirmed.</p></details>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Tell us how your enquiries reach you today</h2>
+      <p class="sub">A short message is enough to start. We reply fast.</p>
+      <div class="cta">
+        <a class="btn primary" href="https://wa.me/910000000000">Message on WhatsApp</a>
+        <a class="btn" href="https://www.instagram.com/definebit.dev/">DM on Instagram</a>
+        <a class="btn" href="mailto:definebit.dev@gmail.com">Send an email</a>
+      </div>
+    </section>
+  </main>
+</div>
+<footer>© defineBit · definebit.dev · Websites and software development</footer>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I manage travel enquiries from Instagram and WhatsApp in one place?","acceptedAnswer":{"@type":"Answer","text":"We connect both to a custom CRM, so each enquiry becomes a lead with a status, an owner and a follow-up reminder. You can see at a glance who still needs a reply."}},{"@type":"Question","name":"Do I need Meta approval to connect WhatsApp and Instagram?","acceptedAnswer":{"@type":"Answer","text":"Yes. Connecting WhatsApp and Instagram needs Meta's business approval. We guide you through it as part of the setup."}},{"@type":"Question","name":"Can I get a daily summary of my bookings?","acceptedAnswer":{"@type":"Answer","text":"Yes. The CRM can send one short Telegram or WhatsApp message each day with new enquiries, quotes waiting for a reply and bookings confirmed."}}]}</script>
+</body>
+</html>
